@@ -1,7 +1,7 @@
 {
   "name": "it-vendor-provision",
-  "version": "0.5.0",
-  "description": "End-to-end IT vendor software provisioning management: initial assessment with segmentation and benchmarking, contract and SLA review, vendor onboarding with security hardening and knowledge transfer, license management with FinOps and SaaS spend governance, shadow IT discovery and governance, GDPR/NIS2/AI Act/DORA/ENS/PCI DSS risk analysis with data classification alignment, business continuity planning for vendor dependencies, contract lifecycle with communication templates and performance meetings, executive and board-level reporting (dashboards, KPIs, risk register), RFP generation, external audit preparation (ISO 27001, NIS2, GDPR, ISO 20000, ISO 22301), and exit plan execution with data portability. Customizable by sector and client tools.",
+  "version": "0.6.0",
+  "description": "End-to-end IT vendor software provisioning management: initial assessment with segmentation and benchmarking, contract and SLA review, vendor onboarding with security hardening and knowledge transfer, license management with FinOps and SaaS spend governance, shadow IT discovery and governance, multi-jurisdiction regulatory risk analysis (EU: GDPR/NIS2/AI Act/DORA/ENS; UK: UK GDPR/DPA 2018/FCA SS2-21; US: HIPAA/CCPA-CPRA/NIST CSF/SOC 2; Global: PCI DSS/ISO 27001) with data classification alignment, business continuity planning for vendor dependencies, contract lifecycle with communication templates and performance meetings, executive and board-level reporting (dashboards, KPIs, risk register), RFP generation, external audit preparation (ISO 27001, SOC 2, HIPAA, NIS2, GDPR, FCA, UK ICO, ISO 20000, ISO 22301), and exit plan execution with data portability. Customizable by sector, jurisdiction and client tools.",
   "author": {
     "name": "Ricardo Devis / Bilbao.AI"
   },
@@ -38,7 +38,18 @@
     "iso-22301",
     "due-diligence",
     "benchmarking",
-    "board-reporting"
+    "board-reporting",
+    "hipaa",
+    "ccpa",
+    "cpra",
+    "uk-gdpr",
+    "fca",
+    "soc2",
+    "nist-csf",
+    "multi-jurisdiction",
+    "dpa",
+    "baa",
+    "idta"
   ],
   "repository": "https://github.com/bilbaoai/it-vendor-provision",
   "license": "Apache-2.0"

@@ -11,12 +11,12 @@ Covers the complete lifecycle of software vendor relationships, from initial ass
 - **Vendor Onboarding**: Security hardening, access provisioning, knowledge transfer, and first-90-days validation
 - **License Management**: Inventory, usage audit, optimization, compliance, and SaaS spend governance (FinOps)
 - **Shadow IT Governance**: Discovery, risk assessment, and remediation of unsanctioned software
-- **Regulatory Risk**: GDPR, NIS2, AI Act, DORA, ENS, PCI DSS, ISO 20000/22301 compliance analysis with data classification alignment
+- **Regulatory Risk**: Multi-jurisdiction compliance analysis — EU (GDPR, NIS2, AI Act, DORA, ENS), UK (UK GDPR/DPA 2018, FCA SS2/21), US (HIPAA, CCPA/CPRA, NIST CSF, SOC 2), Global (PCI DSS, ISO 27001/20000/22301) — with conditional jurisdiction screening and data classification alignment
 - **Business Continuity**: Vendor dependency mapping, concentration risk, redundancy strategy, and continuity testing
 - **Contract Lifecycle**: Renewals, amendments, incidents, communication templates, and performance meeting governance
 - **Executive Reporting**: Portfolio dashboard, vendor KPIs, risk register, and board-level risk narrative
 - **Periodic Re-evaluation**: Annual review with SLA history, incidents, satisfaction, and risk evolution
-- **Audit Preparation**: Evidence dossier for ISO 27001, NIS2, GDPR, DORA, and due diligence
+- **Audit Preparation**: Evidence dossier for ISO 27001, SOC 2, HIPAA, NIS2, GDPR, FCA, UK ICO, DORA, and due diligence
 - **Exit Execution**: Migration plan, data export, communications, and contract closure
 
 ## Examples
@@ -28,6 +28,7 @@ The `examples/` directory contains complete, realistic output samples showing ex
 | `vendor-assess-example.md` | CloudSync Pro v4.2 — SaaS DMS (Dublin) | Score 3.65/5, AI Act gap, price escalation risk → APPROVE WITH CONDITIONS |
 | `contract-review-example.md` | DataVault Enterprise MSA — Analytics (EUR 184K/yr) | 3 red blocks, 5 redlines, DORA missing → SIGN WITH CHANGES |
 | `license-audit-example.md` | Meridian Financial Group — 14 products, EUR 2.85M/yr | EUR 412K savings (14.5%), Tableau over-licensing, 2 shadow IT tools |
+| `multi-jurisdiction-assessment-example.md` | SecureVault Inc. — US vendor, UK subsidiary, Spanish financial client | 8 regulations apply simultaneously, 85% compliance, APPROVE WITH CONDITIONS |
 
 ## MCP Connectors
 
@@ -54,7 +55,8 @@ it-vendor-provision/
 ├── examples/
 │   ├── vendor-assess-example.md
 │   ├── contract-review-example.md
-│   └── license-audit-example.md
+│   ├── license-audit-example.md
+│   └── multi-jurisdiction-assessment-example.md
 ├── connectors/
 │   └── asset-management-mcp/
 │       ├── package.json
@@ -114,7 +116,13 @@ it-vendor-provision/
 │   │       ├── pci-dss-vendor-checklist.md
 │   │       ├── iso-service-management-checklist.md
 │   │       ├── bc-vendor-dependencies.md
-│   │       └── data-classification-vendor-matrix.md
+│   │       ├── data-classification-vendor-matrix.md
+│   │       ├── uk-gdpr-dpa2018-checklist.md
+│   │       ├── hipaa-vendor-checklist.md
+│   │       ├── ccpa-cpra-vendor-checklist.md
+│   │       ├── soc2-vendor-checklist.md
+│   │       ├── nist-csf-vendor-checklist.md
+│   │       └── uk-fca-vendor-checklist.md
 │   ├── contract-lifecycle/
 │   │   ├── SKILL.md
 │   │   └── references/
@@ -159,7 +167,7 @@ it-vendor-provision/
 ### Audit and exit
 | Command | Description |
 |---------|-------------|
-| `/audit-prep` | Prepares evidence for external audit (ISO 27001, NIS2, GDPR, DORA) |
+| `/audit-prep` | Prepares evidence for external audit (ISO 27001, SOC 2, HIPAA, NIS2, GDPR, FCA, DORA) |
 | `/vendor-exit` | Executes exit plan: migration, data, contract closure |
 
 ## Connectors
@@ -192,7 +200,7 @@ The plugin uses `~~connector` notation for tool-agnostic references. See `CONNEC
 2. **Vendor segmentation**: Classify portfolio using `vendor-assessment/references/vendor-segmentation.md`
 3. **Evaluation weights**: Adjust in `vendor-assessment/SKILL.md`
 4. **Data classification**: Align with vendor capabilities in `risk-compliance/references/data-classification-vendor-matrix.md`
-5. **Sector requirements**: Enable relevant checklists in `risk-compliance/references/` (DORA, PCI DSS, ENS, ISO 20000/22301)
+5. **Sector/jurisdiction requirements**: Enable relevant checklists in `risk-compliance/references/` — EU (DORA, ENS), UK (UK GDPR, FCA), US (HIPAA, CCPA/CPRA, NIST CSF, SOC 2), Global (PCI DSS, ISO 20000/22301)
 6. **SLA thresholds**: Adjust in `it-contract-review/references/sla-playbook.md`
 7. **KPIs and thresholds**: Adjust in `vendor-reporting/references/kpi-framework.md`
 8. **License policy**: Adapt in `license-management/SKILL.md`

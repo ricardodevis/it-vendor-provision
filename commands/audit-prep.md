@@ -2,12 +2,12 @@
 name: audit-prep
 description: >
   Prepares the evidence and documentation needed for an external
-  audit (ISO 27001, SOC 2, NIS2, GDPR, internal audit) of the
-  IT vendor management process. Compiles evidence,
+  audit (ISO 27001, SOC 2, HIPAA, NIS2, GDPR, FCA, UK ICO, internal audit)
+  of the IT vendor management process. Compiles evidence,
   identifies gaps and generates the dossier for the auditor.
 user_instructions: >
-  Indicate the audit type (ISO 27001, NIS2, GDPR, internal
-  audit, M&A due diligence) and, if possible, the scope or
+  Indicate the audit type (ISO 27001, SOC 2, HIPAA, NIS2, GDPR, FCA, UK ICO,
+  internal audit, M&A due diligence) and, if possible, the scope or
   specific controls the auditor will review.
 ---
 
@@ -54,6 +54,48 @@ When executing this command:
    - License compliance (under/over-licensing)
    - Critical dependencies and contingency plans
 
+   **SOC 2 Type II (Trust Services Criteria):**
+   - CC1: Control Environment (tone at top, board oversight)
+   - CC2: Communication and Information (internal/external communication)
+   - CC3: Risk Assessment (risk identification, fraud risk)
+   - CC4: Monitoring Activities (ongoing and separate evaluations)
+   - CC5: Control Activities (logical access, change management)
+   - CC6: Logical and Physical Access Controls (authentication, authorization)
+   - CC7: System Operations (incident management, change management)
+   - CC8: Change Management (infrastructure/software changes)
+   - CC9: Risk Mitigation (vendor risk, business disruption)
+   - A1: Availability (capacity planning, DR/BCP)
+   - PI1: Processing Integrity (completeness, accuracy)
+   - C1: Confidentiality (data classification, access restrictions)
+   - P1-P8: Privacy (notice, choice, collection, use, disclosure, access, quality, monitoring)
+
+   **HIPAA (Health Insurance Portability and Accountability Act):**
+   - Administrative Safeguards (§164.308): risk analysis, workforce training, contingency plan, BAA verification
+   - Physical Safeguards (§164.310): facility access, workstation security, device/media controls
+   - Technical Safeguards (§164.312): access control, audit controls, integrity, transmission security
+   - Breach Notification Rule (§164.400-414): notification timelines, content requirements
+   - Business Associate Agreement verification
+
+   **UK ICO Accountability Framework:**
+   - Art. 5(2) UK GDPR: demonstrate compliance (accountability principle)
+   - DPIA requirements and when mandatory
+   - DPO expectations and appointment criteria
+   - Records of processing activities
+   - International transfers (IDTA, UK SCCs Addendum)
+   - Children's code compliance (Age Appropriate Design Code)
+   - ICO expectations on data sharing and transparency
+
+   **FCA Outsourcing (SS2/21, SYSC 8):**
+   - Materiality assessment of outsourcing arrangement
+   - Pre-outsourcing risk assessment and due diligence
+   - Written outsourcing agreement requirements
+   - Business continuity and exit planning
+   - Sub-outsourcing chain management
+   - Audit and access rights (regulator and firm)
+   - Concentration risk assessment
+   - Operational resilience (PS21/3) impact tolerances
+   - PRA coordination requirements (dual-regulated firms)
+
 3. **Collect evidence** for each applicable control:
 
    | Evidence | Source | Control Covered |
@@ -74,6 +116,44 @@ When executing this command:
    | License inventory and compliance | asset management tool | Internal Audit |
    | Business continuity/contingency plans for critical vendors | document repository | NIS2 21.2.c |
    | Vendor security awareness training records | Training records | NIS2 21.2.g |
+   | SOC 2 Type II audit report (latest) | Vendor management system | SOC 2 CC1-CC9, A1, PI1, C1 |
+   | SOC 2 attestation and scope statement | Vendor management system | SOC 2 trust services criteria |
+   | Control environment documentation (policies, procedures) | document repository | SOC 2 CC1 |
+   | Communication and disclosure records | document repository | SOC 2 CC2 |
+   | Risk assessment and monitoring logs | Risk register | SOC 2 CC3, CC4 |
+   | Access control and change management records | ticketing system | SOC 2 CC5, CC6, CC8 |
+   | Incident management records | ticketing system | SOC 2 CC7 |
+   | Business continuity and disaster recovery plans | document repository | SOC 2 A1 |
+   | Data processing integrity evidence | system logs | SOC 2 PI1 |
+   | Data classification and encryption records | document repository | SOC 2 C1 |
+   | Privacy policies and data handling procedures | document repository | SOC 2 P1-P8 |
+   | HIPAA Business Associate Agreements (signed) | contract management system | HIPAA §164.308, §164.312 |
+   | Risk analysis documentation | document repository | HIPAA §164.308(a)(1)(ii) |
+   | Workforce security and training records | Training records | HIPAA §164.308(a)(3) |
+   | Access control implementation and logs | system access logs | HIPAA §164.312(a)(1) |
+   | Audit controls and logging evidence | system logs | HIPAA §164.312(b) |
+   | Integrity control evidence (checksums, hashing) | system logs | HIPAA §164.312(c)(1) |
+   | Encryption and transmission security documentation | system documentation | HIPAA §164.312(e) |
+   | Breach notification procedures and logs | ticketing system | HIPAA §164.400-414 |
+   | Contingency planning documentation | document repository | HIPAA §164.308(a)(7) |
+   | Physical access controls (facility, workstation) | facility records | HIPAA §164.310 |
+   | Device and media controls documentation | asset management | HIPAA §164.310(d) |
+   | UK GDPR accountability evidence (Article 5(2)) | document repository | UK ICO Framework |
+   | Data Protection Impact Assessments (DPIA) | document repository | UK ICO DPIA requirements |
+   | Data Protection Officer appointment and records | HR/Governance | UK ICO DPO requirements |
+   | Records of processing activities (ROPA) | document repository | UK ICO accountability |
+   | International transfer documentation (IDTA, SCCs) | contract management | UK ICO international transfers |
+   | Age Appropriate Design Code compliance evidence | document repository | UK ICO Children's code |
+   | Data sharing and transparency records | document repository | UK ICO expectations |
+   | FCA outsourcing materiality assessment | Risk register | FCA SS2/21, SYSC 8 |
+   | Pre-outsourcing due diligence documentation | document repository | FCA SS2/21 |
+   | Outsourcing agreements with regulatory clauses | contract management | FCA SYSC 8.1 |
+   | Business continuity and exit strategy documentation | document repository | FCA SS2/21 |
+   | Sub-outsourcing chain management records | vendor management | FCA SS2/21 |
+   | Audit and access rights documentation | contract management | FCA SYSC 8.1 |
+   | Concentration risk assessment | Risk register | FCA SS2/21 |
+   | Operational resilience impact tolerances | document repository | FCA PS21/3 |
+   | PRA coordination records (if dual-regulated) | Governance records | FCA for dual-regulated firms |
 
 4. **Verify completeness** — for each evidence:
    - ✅ Available and current

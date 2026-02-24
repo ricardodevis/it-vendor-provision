@@ -5,6 +5,34 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.6.0] - 2026-02-24
+
+### Added
+
+- **Multi-jurisdiction regulatory framework** — Expanded from 85% EU-only coverage to full EU/UK/US/Global regulatory support with conditional jurisdiction screening:
+  - `uk-gdpr-dpa2018-checklist.md` — UK GDPR + DPA 2018 + ICO expectations, IDTA, UK SCCs Addendum, Adequacy Bridge, Children's Code
+  - `hipaa-vendor-checklist.md` — HIPAA Privacy/Security Rules, BAA requirements (45 CFR §164.504(e)), Breach Notification, HITECH Act, OCR enforcement
+  - `ccpa-cpra-vendor-checklist.md` — CCPA/CPRA, Service Provider vs Contractor vs Third Party, US state privacy laws comparison
+  - `soc2-vendor-checklist.md` — SOC 2 Type I/II, five Trust Services Categories, report reading guide, bridge letters, CUECs/CSOCs
+  - `nist-csf-vendor-checklist.md` — NIST CSF 2.0 six functions, SP 800-171, CMMC 2.0 Levels 1-3, FedRAMP, EO 14028 SBOM
+  - `uk-fca-vendor-checklist.md` — FCA SS2/21, SYSC 8, Operational Resilience PS21/3, concentration risk, PRA coordination
+
+- **Jurisdiction screening logic** — `risk-compliance/SKILL.md` now has 17-question screening table with `Jurisdiction` column (EU/UK/US/Global) that determines which checklists apply. Supports simultaneous multi-jurisdiction assessment
+
+- **Multi-jurisdiction assessment example** — `examples/multi-jurisdiction-assessment-example.md`: SecureVault Inc. (US vendor, UK subsidiary) selling to Spanish financial client. Demonstrates 8 simultaneous regulations (GDPR + UK GDPR + CCPA + DORA + AI Act + PCI DSS + ENS + SOC 2), gap analysis across jurisdictions, and remediation scorecard
+
+- **Expanded audit frameworks** — `audit-prep` command now covers SOC 2 Type II (Trust Services Criteria), HIPAA (Administrative/Physical/Technical Safeguards), UK ICO Accountability Framework, and FCA Outsourcing (SS2/21, SYSC 8)
+
+- **Multi-jurisdiction DPA checklist** — `dpa-checklist.md` expanded with UK International Data Transfer Addendum (IDTA, UK SCCs Addendum, Adequacy Bridge), US Data Processing Addendum (CCPA SPA, HIPAA BAA), multi-jurisdiction transfer matrix, and cross-jurisdiction red flags
+
+### Changed
+
+- `risk-compliance/SKILL.md` restructured: "The Three Key Regulations" → "Applicable Regulations" with 4 jurisdiction groups (EU, UK, US, Global)
+- Evidence gathering (Step 2) expanded with UK and US regulation-specific evidence requirements
+- Plugin description updated to reflect multi-jurisdiction coverage
+- Keywords extended to 45 (added: hipaa, ccpa, cpra, uk-gdpr, fca, soc2, nist-csf, multi-jurisdiction, dpa, baa, idta)
+- README.md updated with new regulatory coverage, structure tree, and examples
+
 ## [0.5.0] - 2026-02-24
 
 ### Added
