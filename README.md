@@ -216,8 +216,10 @@ The plugin uses `~~connector` notation for tool-agnostic references. See `CONNEC
 
 ## Author
 
-Ricardo Devis / Bilbao.AI
+**[Ricardo Devis](https://ricardodevis.com)** — [LinkedIn](https://linkedin.com/in/devis)
+
+[Bilbao.AI](https://bilbao.ai)
 
 ## License
 
-Apache-2.0
+Apache-2.0 — See [LICENSE](LICENSE) and [NOTICE](NOTICE) for details.
