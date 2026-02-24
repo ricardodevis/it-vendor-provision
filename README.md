@@ -19,12 +19,50 @@ Covers the complete lifecycle of software vendor relationships, from initial ass
 - **Audit Preparation**: Evidence dossier for ISO 27001, NIS2, GDPR, DORA, and due diligence
 - **Exit Execution**: Migration plan, data export, communications, and contract closure
 
+## Examples
+
+The `examples/` directory contains complete, realistic output samples showing exactly what each core command produces:
+
+| Example | Scenario | Key findings |
+|---------|----------|-------------|
+| `vendor-assess-example.md` | CloudSync Pro v4.2 — SaaS DMS (Dublin) | Score 3.65/5, AI Act gap, price escalation risk → APPROVE WITH CONDITIONS |
+| `contract-review-example.md` | DataVault Enterprise MSA — Analytics (EUR 184K/yr) | 3 red blocks, 5 redlines, DORA missing → SIGN WITH CHANGES |
+| `license-audit-example.md` | Meridian Financial Group — 14 products, EUR 2.85M/yr | EUR 412K savings (14.5%), Tableau over-licensing, 2 shadow IT tools |
+
+## MCP Connectors
+
+The `connectors/` directory contains real MCP server implementations that replace `~~connector` placeholders with working integrations.
+
+### Asset Management MCP Server
+
+Located at `connectors/asset-management-mcp/`. TypeScript MCP server providing software inventory, license usage, costs, and vendor data. Ships with a realistic mock dataset (15 SaaS products, 10 vendors, EUR 2.29M/yr) for testing the full plugin workflow.
+
+```bash
+cd connectors/asset-management-mcp
+npm install && npm run build
+npm start   # stdio mode for local MCP clients
+```
+
+See `connectors/asset-management-mcp/README.md` for configuration and production extension guide.
+
 ## Structure
 
 ```
 it-vendor-provision/
 ├── .claude-plugin/
 │   └── plugin.json
+├── examples/
+│   ├── vendor-assess-example.md
+│   ├── contract-review-example.md
+│   └── license-audit-example.md
+├── connectors/
+│   └── asset-management-mcp/
+│       ├── package.json
+│       ├── tsconfig.json
+│       ├── src/
+│       │   ├── index.ts
+│       │   └── mock-data.ts
+│       └── README.md
 ├── commands/
 │   ├── vendor-assess.md        → /vendor-assess
 │   ├── contract-review.md      → /contract-review

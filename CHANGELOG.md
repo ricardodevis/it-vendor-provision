@@ -5,6 +5,31 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.5.0] - 2026-02-24
+
+### Added
+
+- **Worked examples** — Three complete, realistic output samples demonstrating what each core command produces:
+  - `examples/vendor-assess-example.md` — CloudSync Pro v4.2 evaluation (SaaS DMS, Dublin). 6-dimension scorecard, weighted score 3.65/5.00, recommendation APPROVE WITH CONDITIONS. Demonstrates AI Act gap, price escalation risk, sub-processor notification issue
+  - `examples/contract-review-example.md` — DataVault Enterprise MSA (data analytics, EUR 184K/yr, DORA applicable). 8-block traffic light analysis (1 OK, 4 NEGOTIATE, 3 RISK), 5 redline proposals with exact contract language, 5 missing clauses. Recommendation SIGN WITH CHANGES
+  - `examples/license-audit-example.md` — Meridian Financial Group SaaS portfolio (14 products, 6 vendors, EUR 2.85M/yr). Complete inventory, usage analysis with traffic lights, 3 compliance risks (Tableau over-licensing, shadow IT PII, Microsoft EA renewal), 3-phase optimization plan with EUR 412K savings (14.5%)
+
+- **Asset Management MCP Server** — First real MCP connector implementation replacing the `~~asset management tool` placeholder:
+  - `connectors/asset-management-mcp/` — TypeScript MCP server (MCP SDK) with 5 tools:
+    - `list_software_inventory` — Full inventory with filters (status, criticality, vendor, owner, tag)
+    - `get_software_usage` — Detailed usage metrics per asset (adoption, utilization, dormant, orphaned)
+    - `get_license_costs` — Spend analysis with vendor breakdown, renewal calendar, waste analysis
+    - `search_software` — Free-text search across name, vendor, category, tags, owner
+    - `get_vendor_summary` — Vendor relationship data (certifications, risk, contracts, review dates)
+  - Embedded mock dataset: 15 SaaS products, 10 vendors, EUR 2.29M/yr — realistic data matching the license audit example
+  - Both markdown and JSON output formats
+  - README with setup, configuration, and production extension guide
+
+### Changed
+
+- README.md updated with examples section and MCP connector documentation
+- Plugin structure tree updated to include `examples/` and `connectors/`
+
 ## [0.4.0] - 2026-02-23
 
 ### Added
